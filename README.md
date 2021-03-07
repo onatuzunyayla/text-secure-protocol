@@ -1,7 +1,12 @@
-# text-secure-protocol
+
 # Cryptography of Text Secure Protocols &amp; Applications
 
-## Registration
+Phase I: 
+Developing software for the Registration and the Station-to-Station (STS) protocols. All coding development will be in Python programming language.
+Phase II:
+Developing software for receiving messages from other clients
+## Phase I: Developing software for the Registration and Station- to-Station Protocols
+### Registration
 
 The long term public key of the server QS_L is given below. 
 
@@ -29,7 +34,7 @@ where code is verification code which, you have received in the previous step. A
 e-mail implemented in your API, which states that you are registered with the server successfully.
 Once you register with the server successfully, you are not required to perform registration step again as the server stores your long-term public key to identify you.
 
-## Station-to-Station Protocol
+### Station-to-Station Protocol
 
 Here, STS protocol is implemented. For the protocol, you will need the elliptic curve digital signature algorithm described in Section 2.3.
 The protocol has seven steps as explained below.
@@ -76,7 +81,7 @@ W4 : 86987 MessagetoServer : 86987
 8. If your message is valid, the server will send a response message as 
 E_k(“SUCCESSFUL”||Rand + 2) 
 
-## Elliptic Curve Digital Signature Algorithm (ECDSA)
+### Elliptic Curve Digital Signature Algorithm (ECDSA)
 
 Here, you will develop a Python code that includes functions for signing given any message and verifying the signature. For ECDSA, you will use an algorithm, which consists of three functions as follows:
 
@@ -94,7 +99,7 @@ Here, you will develop a Python code that includes functions for signing given a
 – Accept the signature only if h = h′
 – Reject it otherwise.
 
-# Developing software for receiving messages from other clients
+## Phase II: Developing software for receiving messages from other clients
 
 
 You are required to develop a software for downloading 5 messages from the server, which were uploaded to the server originally by a pseudo-client, which is implemented in the python code ephemeral.py
@@ -114,7 +119,7 @@ Finally, you must sent your ephemeral public keys to the server in the form of
 
 where i is the ID of your ephemeral key. You must start generating your ephemeral keys with IDs from 0 and follow the order. Moreover, you have to store your ephemeral private keys with their IDs.
 
-## Resetting the ephemeral keys
+### Resetting the ephemeral keys
 
 If you forget to store your ephemeral private keys or require to get new messages sent by the pseudo-client, you must sign your ID using your long-term private key and send a message to the server in the form of
 
@@ -122,7 +127,7 @@ If you forget to store your ephemeral private keys or require to get new message
 
 When the server receives your message, your ephemeral keys will be deleted. After you produce as new set of ephemeral keys and register with the server again, pseudo client will produce a new set of 5 messages for you.
 
-## 3.2 Receiving messages
+### 3.2 Receiving messages
 
 As mentioned above, you will download 5 messages from the server. In order to download one mes- sage from the server, you must sign your ID using your long-term private key and send a message to the server in the form of
 
@@ -134,7 +139,7 @@ to download one message from the server as follows
 
 where stuIDB is the ID of the sender, i is the ID of your ephemeral key, which is used to generate session keys, msg contains both the encrypted message and its MAC, and QBj.x and QBj.y are x and y coordinates of the ephemeral public key of the server, respectively.
 
-## 3.2.1 Session Key and msg Generation
+### 3.2.1 Session Key and msg Generation
 
 As mentioned above, the message that you received includes the ciphertext as well as its MAC,
 which is concatenated to the end of the ciphertext. In order to create a message in this way, the
@@ -152,7 +157,7 @@ which are QAi and QBj , respectively. Before the computation, the pseudo-client 
 After it computes the session keys, it encrypts the message with K_ENC using AES-CTR6 and
 computes HMAC_SHA256 []. of the ciphertext with K_MAC AB
 
-## Decrypting the messages
+### Decrypting the messages
 
 After you download a message, which is sent by the pseudo-client, from the server, you must gener-
 ate session keys firstly. As mentioned above, QBj and i are given to you in the message. Therefore,
