@@ -136,8 +136,11 @@ pseudo-client will compute two session keys KENC and KMAC using your and its eph
 which are QAi and QBj , respectively. Before the computation, the pseudo-client requests your ephemeral key from the server and the server sends your ephemeral key QAi with your key ID i. Then, it computes the session keys as follows:
 
 • T = sBj QAi , where sBj is the jth secret ephemeral key of the pseudo-client.
+
 • U = {T.x||T.y||“NoNeedToRunAndHide”} 5
+
 • K_ENC = SHA3 256(U) AB
+
 • K_MAC = SHA3 256(K_ENC) AB AB
 
 After it computes the session keys, it encrypts the message with KENC using AES-CTR6 and
@@ -150,5 +153,7 @@ ate session keys firstly. As mentioned above, QBj and i are given to you in the 
 you must compute K_ENC and K_MAC as sAiQBj and SHA3 256(K_ENC), respectively. Then, you
 must verify the HMAC code and decrypt the message. 
 Finally, you must send the decrypted mes- sage with your ID as follows
+
 {‘ID’: stuID, ‘DECMSG’: decmsg}. 
+
 where decmsg is the decrypted message.
