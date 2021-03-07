@@ -102,7 +102,7 @@ Here, you will develop a Python code that includes functions for signing given a
 ## Phase II: Developing software for receiving messages from other clients
 
 
-You are required to develop a software for downloading 5 messages from the server, which were uploaded to the server originally by a pseudo-client, which is implemented in the python code ephemeral.py
+You will be downloading 5 messages from the server, which were uploaded to the server originally by a pseudo-client, which is implemented in the python code ephemeral.py
 
 Phase I is about registration protocol so you must implement the protocol before Phase II and register your long-term public key with the server.
 3.1 Registration of ephemeral keys
