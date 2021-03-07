@@ -2,8 +2,11 @@
 Cryptography of Text Secure Protocols &amp; Applications
 
 Registration
-The long term public key of the server QSL is given below. X:0xc1bc6c9063b6985fe4b93be9b8f9d9149c353ae83c34a434ac91c85f61ddd1e9
-   Y:0x931bd623cf52ee6009ed3f50f6b4f92c564431306d284be7e97af8e443e69a8c
+The long term public key of the server QSL is given below. 
+
+X:0xc1bc6c9063b6985fe4b93be9b8f9d9149c353ae83c34a434ac91c85f61ddd1e9
+Y:0x931bd623cf52ee6009ed3f50f6b4f92c564431306d284be7e97af8e443e69a8c
+
 In this part, firstly you are required to generate a long-term private and public key pair sL and QL for yourself. The key generation is described in “Key generation” algorithm in Section 2.3. Then, you are required to register with the server. The registration operation consists of four steps:
 1. After you generate your long-term key pair, you should sign your ID (e.g. 18007). The de- tails of the signature scheme is given in the signature generation algorithm in Section 2.3. Then, you will send a message, which contains your student ID, the signature tuple and your long-term public key, to the server. The message format is
 {‘ID’: stuID, ‘H’: h, ‘S’: s, ‘LKEY.X’: lkey.x, ‘LKEY.Y’: lkey.y}
