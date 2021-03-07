@@ -1,7 +1,7 @@
 # text-secure-protocol
 Cryptography of Text Secure Protocols &amp; Applications
 
-Registration &amp;
+Registration
 The long term public key of the server QSL is given below. X:0xc1bc6c9063b6985fe4b93be9b8f9d9149c353ae83c34a434ac91c85f61ddd1e9
    Y:0x931bd623cf52ee6009ed3f50f6b4f92c564431306d284be7e97af8e443e69a8c
 In this part, firstly you are required to generate a long-term private and public key pair sL and QL for yourself. The key generation is described in “Key generation” algorithm in Section 2.3. Then, you are required to register with the server. The registration operation consists of four steps:
@@ -15,7 +15,7 @@ where stuID is your student ID, h and s are signature tuple and lkey.x and lkey.
 e-mail, which states that you are registered with the server successfully.
 Once you register with the server successfully, you are not required to perform registration step again as the server stores your long-term public key to identify you.
 
-Station-to-Station Protocol &amp;
+Station-to-Station Protocol
 Here, you will develop a python code to implement the STS protocol. For the protocol, you will need the elliptic curve digital signature algorithm described in Section 2.3.
 The protocol has seven steps as explained below.
 2
